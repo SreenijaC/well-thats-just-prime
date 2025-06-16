@@ -3,9 +3,11 @@ package org.example;
 import java.util.ArrayList;
 
 public class Factorizer {
+  // int vs. Integer
   // find all prime factors of a given number n
   public ArrayList<Integer> primeFactors(Integer n) {
-    ArrayList<Integer> factors = new ArrayList<>();
+    ArrayList<Integer> factors = new ArrayList<>(); // wrapper classes needed for Java data structures
+
     // If no.is less than or equal to 1, return empty list as per spec
     if (n == null || n <= 1)
       return factors;
@@ -15,11 +17,11 @@ public class Factorizer {
 
     // Loop until no.reduced to 1
     while (number > 1) {
-      if (number % divisor == 0) {
+      if (number % divisor == 0) { // check for divisibilty
         factors.add(divisor); // add divisor as prime factor
         number /= divisor; // dividing by divisor to reduce no.
       } else {
-        divisor++;
+        divisor++; // next factor (prime)
       }
     }
     return factors;
